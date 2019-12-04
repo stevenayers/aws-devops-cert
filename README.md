@@ -32,6 +32,8 @@ Example Usage:
 curl -iva http://postcode-api-url/postcode/SE12FG
 ```
 
-
 ### Address Service (Backend)
-Ingests postcode from Amazon SQS instance, looks up matching addresses, then stores them in dynamoDB.
+Ingests valid postcode from Amazon SQS instance, looks up matching addresses, then stores them in DynamoDB.
+
+### Invalid Postcode Lambda
+Ingests invalid postcodes from Amazon SQS instance and stores them in DynamoDB.
