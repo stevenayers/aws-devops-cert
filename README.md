@@ -37,3 +37,6 @@ Ingests valid postcode from Amazon SQS instance, looks up matching addresses, th
 
 ### Invalid Postcode Lambda
 Ingests invalid postcodes from Amazon SQS instance and stores them in DynamoDB.
+
+### Backup Snapshot Lambda
+Creates a snapshot of an EBS volume, and deletes old ones.
