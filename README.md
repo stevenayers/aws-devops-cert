@@ -32,11 +32,13 @@ Example Usage:
 curl -iva http://postcode-api-url/postcode/SE12FG
 ```
 
-### Address Service (Backend)
-Ingests valid postcode from Amazon SQS instance, looks up matching addresses, then stores them in DynamoDB.
+### Crime Lookup Service (Backend)
+Ingests valid postcode from Amazon SQS instance, fetches longitude and latitude of postcode and returns reported crimes in the past month within a mile radius.
+
+Maybe if the police API returns 429 (exceeds 15 requests per second) we can somehow manage this or create a cloudwatch alarm?
 
 ### Invalid Postcode Lambda
-Ingests invalid postcodes from Amazon SQS instance and stores them in DynamoDB.
+Stores Scottish postcodes as currently not supported.
 
 ### Backup Snapshot Lambda
 Creates a snapshot of an EBS volume, and deletes old ones.
